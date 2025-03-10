@@ -1,0 +1,29 @@
+{
+	"config": {
+        "namespace": "Magenta",
+        "module_name": "Dragon",
+        "interface_name": "Phoenix"
+	},
+	"backend-auto-gen": {
+		"schema": {
+			"enable": true,
+			"table_name": "auto"
+		},
+		"controller": {
+			"enable": true,
+			"name": "auto"
+		},
+		"menu": true,
+		"acl": true,
+		"ui-component": true,
+		"i18n": true,
+		"uninstall": true
+	},
+    "name": "Magento 2 module creator by Python",
+	"description": "Easily generate base code for a Magento 2 module, just run 'python generate.py'",
+	"type": "project",
+	"license": [
+		"OSL-3.0",
+		"AFL-3.0"
+	]
+}
