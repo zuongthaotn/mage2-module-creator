@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 # from source.controller import Controller
 from source.registration import Registration
+from source.schema import Schema
 
 
 def run(data_config):
@@ -10,13 +11,17 @@ def run(data_config):
     """
         Generating registration.php & etc/module.xml
     """
-    reg = Registration([data_config['config']['namespace'], data_config['config']['module_name']], template_path, release_path)
+    reg = Registration([data_config['config']['namespace'], data_config['config']['module_name']], template_path,
+                       release_path)
     reg.generate()
     """
         Generating schema, interface, model, repository, resource model, collection & grid collection
     """
-    # if data['backend-auto-gen']['controller']:
-    #     reg = Registration()
+    if data['backend-auto-gen']['schema']:
+        sch = Schema([data_config['config']['namespace'], data_config['config']['module_name'],
+                      data_config['config']['interface_name']], template_path, release_path)
+        sch.generate()
+
 
 def validate_config_file():
     return True

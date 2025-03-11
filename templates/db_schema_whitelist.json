@@ -1,0 +1,15 @@
+{
+    "{{interface_name_lower}}": {
+        "column": {
+            "{{interface_name_lower}}_id": true,
+            "name": true,
+            "is_enable": true
+        },
+        "index": {
+            "{{interface_name_upper}}_IDENTIFIER_CONTENT": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

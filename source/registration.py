@@ -1,6 +1,10 @@
 import os
 import pathlib
 
+DS = '/'
+REGISTRATION = 'registration.php'
+MODULE = 'module.xml'
+
 
 class Registration:
     def __init__(self, config, template_path, release_path):
@@ -14,23 +18,20 @@ class Registration:
         self.generate_module_xml_file()
 
     def generate_registration_file(self):
-        file_template = self.template_path + '/registration.templ'
-        release_folder = self.release_path + '/' + self.namespace + '/' + self.module_name
-        file_release = release_folder + '/registration.php'
-        is_file = os.path.isfile(file_template)
-        if is_file:
-            pathlib.Path(release_folder).mkdir(parents=True, exist_ok=True)
-            with open(file_template, "rt") as fin:
-                with open(file_release, "wt") as fileout:
-                    for line in fin:
-                        new_line_content = line.replace('{{namespace}}', self.namespace)\
-                                                .replace('{{module_name}}', self.module_name)
-                        fileout.write(new_line_content)
+        release_folder = self.release_path + DS + self.namespace + DS + self.module_name
+        file_release = release_folder + DS + REGISTRATION
+        file_template = self.template_path + DS + REGISTRATION
+        self.generate_file(file_template, file_release, release_folder)
+        return self
 
     def generate_module_xml_file(self):
-        file_template = self.template_path + '/module.templ'
-        release_folder = self.release_path + '/' + self.namespace + '/' + self.module_name + '/etc'
-        file_release = release_folder + '/module.xml'
+        release_folder = self.release_path + DS + self.namespace + DS + self.module_name + DS + 'etc'
+        file_release = release_folder + DS + MODULE
+        file_template = self.template_path + DS + MODULE
+        self.generate_file(file_template, file_release, release_folder)
+        return self
+
+    def generate_file(self, file_template, file_release, release_folder):
         is_file = os.path.isfile(file_template)
         if is_file:
             pathlib.Path(release_folder).mkdir(parents=True, exist_ok=True)

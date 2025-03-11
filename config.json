@@ -6,12 +6,10 @@
 	},
 	"backend-auto-gen": {
 		"schema": {
-			"enable": true,
-			"table_name": "auto"
+			"enable": true
 		},
 		"controller": {
-			"enable": true,
-			"name": "auto"
+			"enable": true
 		},
 		"menu": true,
 		"acl": true,

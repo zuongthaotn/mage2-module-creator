@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="{{namespace}}\{{module_name}}\Api\Data\{{interface_name}}Interface" type="{{namespace}}\{{module_name}}\Model\{{interface_name}}" />
+    <preference for="{{namespace}}\{{module_name}}\Api\{{interface_name}}RepositoryInterface" type="{{namespace}}\{{module_name}}\Model\{{interface_name}}Repository" />
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="{{interface_name_lower}}_listing_data_source" xsi:type="string">{{namespace}}\{{module_name}}\Model\ResourceModel\{{interface_name}}\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

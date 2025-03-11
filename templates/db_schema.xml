@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="{{interface_name_lower}}" resource="default" engine="innodb" comment="{{interface_name}} Table">
+        <column xsi:type="smallint" name="{{interface_name_lower}}_id" unsigned="false" nullable="false" identity="true"
+                comment="{{interface_name}} ID"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="{{interface_name}} Name"/>
+        <column xsi:type="smallint" name="is_enable" unsigned="false" nullable="false" identity="false"
+                default="1" comment="Is Enable"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="{{interface_name_lower}}id"/>
+        </constraint>
+        <index referenceId="{{interface_name_upper}}_IDENTIFIER_CONTENT" indexType="fulltext">
+            <column name="name"/>
+        </index>
+    </table>
+</schema>
