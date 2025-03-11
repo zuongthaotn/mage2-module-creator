@@ -23,7 +23,7 @@ class Controller:
 
     def generate_index_controller_file(self):
         release_folder = self.release_path + DS + self.namespace + DS + self.module_name + \
-                         DS + 'Controller' + DS + self.interface_name
+                         DS + 'Controller' + DS + 'Adminhtml' + DS + self.interface_name
         file_release = release_folder + DS + 'Index.php'
         file_template = self.template_path + DS + INDEX_CONTROLLER
         self.generate_file(file_template, file_release, release_folder)

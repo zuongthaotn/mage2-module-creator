@@ -63,7 +63,7 @@ class Schema:
         #
         file_search_result_release = release_folder + DS + self.interface_name + SEARCH_RESULT_INTERFACE
         file_search_result_template = self.template_path + DS + SEARCH_RESULT_INTERFACE
-        self.generate_file(file_search_result_release, file_search_result_template, release_folder)
+        self.generate_file(file_search_result_template, file_search_result_release, release_folder)
         return self
 
     def generate_model_file(self):

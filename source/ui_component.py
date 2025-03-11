@@ -5,6 +5,7 @@ DS = '/'
 LAYOUT = 'ui_index_layout.xml'
 UI_LISTING = 'ui_component_listing.xml'
 DATA_PROVIDER = 'UiDataProvider.php'
+MODEL_DATA_PROVIDER = 'ModelDataProvider.php'
 ACTION = 'UiActions.php'
 STATUS_SOURCE = 'SourceIsEnable.php'
 
@@ -24,6 +25,7 @@ class UiComponent:
         self.generate_layout_file() \
             .generate_ui_listing_file()\
             .generate_data_provider_file()\
+            .generate_model_data_provider_file()\
             .generate_action_file()\
             .generate_source_status_file()
 
@@ -51,6 +53,14 @@ class UiComponent:
         self.generate_file(file_template, file_release, release_folder)
         return self
 
+    def generate_model_data_provider_file(self):
+        release_folder = self.release_path + DS + self.namespace + DS + self.module_name + \
+                         DS + 'Model' + DS + self.interface_name
+        file_release = release_folder + DS + 'DataProvider.php'
+        file_template = self.template_path + DS + MODEL_DATA_PROVIDER
+        self.generate_file(file_template, file_release, release_folder)
+        return self
+
     def generate_action_file(self):
         release_folder = self.release_path + DS + self.namespace + DS + self.module_name + \
                          DS + 'Ui' + DS + 'Component' + DS + 'Listing' + DS + 'Column'
@@ -62,7 +72,7 @@ class UiComponent:
     def generate_source_status_file(self):
         release_folder = self.release_path + DS + self.namespace + DS + self.module_name + \
                          DS + 'Model' + DS + self.interface_name + DS + 'Source'
-        file_release = release_folder + DS + self.interface_name + 'IsEnable.php'
+        file_release = release_folder + DS + 'IsEnable.php'
         file_template = self.template_path + DS + STATUS_SOURCE
         self.generate_file(file_template, file_release, release_folder)
         return self

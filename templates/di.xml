@@ -9,4 +9,12 @@
             </argument>
         </arguments>
     </type>
+    <type name="{{namespace}}\{{module_name}}\Model\ResourceModel\{{interface_name}}\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">{{interface_name_lower}}</argument>
+            <argument name="eventPrefix" xsi:type="string">{{interface_name_lower}}_grid_collection_prevent</argument>
+            <argument name="eventObject" xsi:type="string">{{interface_name_lower}}_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">{{namespace}}\{{module_name}}\Model\ResourceModel\{{interface_name}}</argument>
+        </arguments>
+    </type>
 </config>

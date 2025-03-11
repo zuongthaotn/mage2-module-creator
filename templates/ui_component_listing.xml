@@ -2,7 +2,7 @@
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">{{module_name_lower}}_{{interface_name_lower}}_listing.{{module_name_lower}}_{{interface_name_lower}}_listing_data_source</item>
+            <item name="provider" xsi:type="string">{{module_name_lower}}_{{interface_name_lower}}_listing.{{interface_name_lower}}_listing_data_source</item>
         </item>
     </argument>
     <settings>
@@ -15,10 +15,10 @@
         </buttons>
         <spinner>{{module_name_lower}}_{{interface_name_lower}}_columns</spinner>
         <deps>
-            <dep>{{module_name_lower}}_{{interface_name_lower}}_listing.{{module_name_lower}}_{{interface_name_lower}}_listing_data_source</dep>
+            <dep>{{module_name_lower}}_{{interface_name_lower}}_listing.{{interface_name_lower}}_listing_data_source</dep>
         </deps>
     </settings>
-    <dataSource name="{{module_name_lower}}_{{interface_name_lower}}_listing_data_source" component="Magento_Ui/js/grid/provider">
+    <dataSource name="{{interface_name_lower}}_listing_data_source" component="Magento_Ui/js/grid/provider">
         <settings>
             <storageConfig>
                 <param name="indexField" xsi:type="string">{{interface_name_lower}}_id</param>
@@ -26,7 +26,7 @@
             <updateUrl path="mui/index/render"/>
         </settings>
         <aclResource>{{namespace}}_{{module_name}}::{{interface_name_lower}}s</aclResource>
-        <dataProvider class="{{namespace}}\{{module_name}}\Ui\Component\DataProvider" name="{{module_name_lower}}_{{interface_name_lower}}_listing_data_source">
+        <dataProvider class="{{namespace}}\{{module_name}}\Ui\Component\DataProvider" name="{{interface_name_lower}}_listing_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
                 <primaryFieldName>{{interface_name_lower}}_id</primaryFieldName>

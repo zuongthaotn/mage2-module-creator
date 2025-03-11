@@ -8,7 +8,7 @@
         <column xsi:type="smallint" name="is_enable" unsigned="false" nullable="false" identity="false"
                 default="1" comment="Is Enable"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
-            <column name="{{interface_name_lower}}id"/>
+            <column name="{{interface_name_lower}}_id"/>
         </constraint>
         <index referenceId="{{interface_name_upper}}_IDENTIFIER_CONTENT" indexType="fulltext">
             <column name="name"/>

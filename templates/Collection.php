@@ -17,7 +17,7 @@ class Collection extends AbstractCollection
     /**
      * @var string
      */
-    protected $_eventPrefix = {{interface_name_lower}}_collection_prevent';
+    protected $_eventPrefix = '{{interface_name_lower}}_collection_prevent';
 
     /**
      * @var string
