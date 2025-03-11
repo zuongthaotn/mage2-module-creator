@@ -11,11 +11,21 @@
 		"controller": {
 			"enable": true
 		},
-		"menu": true,
-		"acl": true,
-		"ui-component": true,
-		"i18n": true,
-		"uninstall": true
+		"menu": {
+			"enable": true
+		},
+		"acl": {
+			"enable": true
+		},
+		"ui-component": {
+			"enable": true
+		},
+		"i18n": {
+			"enable": true
+		},
+		"uninstall": {
+			"enable": false
+		}
 	},
     "name": "Magento 2 module creator by Python",
 	"description": "Easily generate base code for a Magento 2 module, just run 'python generate.py'",
