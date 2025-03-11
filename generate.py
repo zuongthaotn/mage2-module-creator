@@ -64,6 +64,9 @@ def validate_config_file(data_config):
     if not data_config['backend-auto-gen']['acl'] and data_config['backend-auto-gen']['menu']:
         print('The generating Menu process requires the ACL enable.')
         exit()
+    if data_config['backend-auto-gen']['ui-component'] and not data_config['backend-auto-gen']['controller']:
+        print('The generating Ui-component process requires the Controller enable.')
+        exit()
 
 
 if __name__ == "__main__":
