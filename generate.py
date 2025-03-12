@@ -7,6 +7,7 @@ from source.menu import Menu
 from source.controller import Controller
 from source.i18n import Translation
 from source.ui_component import UiComponent
+from source.di import Dependency
 
 
 def run(data_config):
@@ -55,6 +56,11 @@ def run(data_config):
     if data_config['backend-auto-gen']['ui-component']:
         ui = UiComponent(_cfg_params, template_path, release_path)
         ui.generate()
+    """
+       Generating DI (Dependency Injection)
+   """
+    di = Dependency(data_config, template_path, release_path)
+    di.generate()
 
 
 def validate_config_file(data_config):

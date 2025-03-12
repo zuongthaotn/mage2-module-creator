@@ -12,7 +12,6 @@ REPOSITORY = "Repository.php"
 RESOURCE_MODEL = "ResourceModel.php"
 COLLECTION = "Collection.php"
 GRID_COLLECTION = "GridCollection.php"
-DI = "di.xml"
 
 
 class Schema:
@@ -33,8 +32,7 @@ class Schema:
             .generate_repository_file() \
             .generate_resource_model_file() \
             .generate_collection_file() \
-            .generate_grid_collection_file() \
-            .generate_di_file()
+            .generate_grid_collection_file()
 
     def generate_schema_files(self):
         release_folder = self.release_path + DS + self.namespace + DS + self.module_name + DS + 'etc'
@@ -101,13 +99,6 @@ class Schema:
                          + DS + 'Model' + DS + 'ResourceModel' + DS + self.interface_name + DS + 'Grid'
         file_release = release_folder + DS + 'Collection.php'
         file_template = self.template_path + DS + GRID_COLLECTION
-        self.generate_file(file_template, file_release, release_folder)
-        return self
-
-    def generate_di_file(self):
-        release_folder = self.release_path + DS + self.namespace + DS + self.module_name + DS + 'etc'
-        file_release = release_folder + DS + 'di.xml'
-        file_template = self.template_path + DS + DI
         self.generate_file(file_template, file_release, release_folder)
         return self
 
