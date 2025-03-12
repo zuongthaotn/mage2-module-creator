@@ -25,6 +25,45 @@
 		},
 		"uninstall": {
 			"enable": false
+		},
+		"crontab": {
+			"enable": false
+		},
+		"plugin": {
+			"enable": false
+		},
+		"frontend-events": {
+			"enable": false
+		},
+		"admin-events": {
+			"enable": false
+		},
+		"events": {
+			"enable": false
+		},
+		"frontend-rest-api": {
+			"enable": false
+		},
+		"admin-rest-api": {
+			"enable": false
+		},
+		"configuration": {
+			"enable": false
+		},
+		"helper": {
+			"enable": false
+		},
+		"offline-payment": {
+			"enable": false
+		},
+		"shipping": {
+			"enable": false
+		},
+		"widget": {
+			"enable": false
+		},
+		"unit-test": {
+			"enable": false
 		}
 	},
     "name": "Magento 2 module creator by Python",

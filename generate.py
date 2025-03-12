@@ -8,6 +8,7 @@ from source.controller import Controller
 from source.i18n import Translation
 from source.ui_component import UiComponent
 from source.di import Dependency
+from source.cron import Crontab
 
 
 def run(data_config):
@@ -56,6 +57,12 @@ def run(data_config):
     if data_config['backend-auto-gen']['ui-component']:
         ui = UiComponent(_cfg_params, template_path, release_path)
         ui.generate()
+    """
+        Generating Crontab
+    """
+    if data_config['backend-auto-gen']['crontab']:
+        cron = Crontab(_cfg_params, template_path, release_path)
+        cron.generate()
     """
        Generating DI (Dependency Injection)
    """
