@@ -9,6 +9,7 @@ from source.i18n import Translation
 from source.ui_component import UiComponent
 from source.di import Dependency
 from source.cron import Crontab
+from source.uninstall import Uninstall
 
 
 def run(data_config):
@@ -63,6 +64,12 @@ def run(data_config):
     if data_config['backend-auto-gen']['crontab']:
         cron = Crontab(_cfg_params, template_path, release_path)
         cron.generate()
+    """
+        Generating Uninstall file
+    """
+    if data_config['backend-auto-gen']['uninstall']:
+        uni = Uninstall(_cfg_params, template_path, release_path)
+        uni.generate()
     """
        Generating DI (Dependency Injection)
    """
