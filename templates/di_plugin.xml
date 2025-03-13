@@ -1,0 +1,3 @@
+    <type name="Magento\Cms\Model\Block\Block">
+        <plugin name="updateCmsBlockTitle" type="{{namespace}}\{{module_name}}\Plugin\CmsBlockTitleUpdater" sortOrder="19" disabled="false" />
+    </type>

@@ -10,6 +10,7 @@ from source.ui_component import UiComponent
 from source.di import Dependency
 from source.cron import Crontab
 from source.uninstall import Uninstall
+from source.plugin import Plugin
 
 
 def run(data_config):
@@ -70,6 +71,12 @@ def run(data_config):
     if data_config['backend-auto-gen']['uninstall']:
         uni = Uninstall(_cfg_params, template_path, release_path)
         uni.generate()
+    """
+            Generating Plugin
+        """
+    if data_config['backend-auto-gen']['plugin']:
+        plugin = Plugin(_cfg_params, template_path, release_path)
+        plugin.generate()
     """
        Generating DI (Dependency Injection)
    """
